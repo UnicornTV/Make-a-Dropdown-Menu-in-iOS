@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7512"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="MainViewController" customModule="Popovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DC-Jr-3pT">
+                                <rect key="frame" x="175" y="87" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.38375306129999998" green="0.19593107700000001" blue="0.71045380830000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="25H-VP-dnA"/>
+                                    <constraint firstAttribute="width" constant="250" id="kmp-J7-35c"/>
+                                </constraints>
+                                <state key="normal" title="Popover Feeling Select">
+                                    <color key="titleColor" red="0.89225109660000002" green="0.86480000000000001" blue="0.93999999999999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qcO-hw-wHD" kind="popoverPresentation" identifier="showPopup" popoverAnchorView="2DC-Jr-3pT" id="e07-x9-1aK">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQ8-sV-njW">
+                                <rect key="frame" x="175" y="198" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.08235294118" green="0.27058823529999998" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lj4-9W-tYu"/>
+                                    <constraint firstAttribute="width" constant="250" id="NcF-Xz-yiU"/>
+                                </constraints>
+                                <state key="normal" title="Custom Feeling Select">
+                                    <color key="titleColor" red="0.69803921570000005" green="0.7725490196" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickerSelect:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UR7-ZT-AhZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AQ8-sV-njW" firstAttribute="trailing" secondItem="2DC-Jr-3pT" secondAttribute="trailing" id="D6g-k1-1fQ"/>
+                            <constraint firstItem="AQ8-sV-njW" firstAttribute="top" secondItem="2DC-Jr-3pT" secondAttribute="bottom" constant="71" id="VhV-qn-mPa"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="AQ8-sV-njW" secondAttribute="bottom" constant="362" id="a88-bL-z8b"/>
+                            <constraint firstItem="2DC-Jr-3pT" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="dA9-aQ-nGD"/>
+                            <constraint firstItem="2DC-Jr-3pT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="67" id="iC8-wY-ruy"/>
+                            <constraint firstItem="AQ8-sV-njW" firstAttribute="leading" secondItem="2DC-Jr-3pT" secondAttribute="leading" id="rSC-Yr-gQf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="a88-bL-z8b"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="wge-Oe-uxu">
+            <objects>
+                <viewController id="qcO-hw-wHD" customClass="PopupViewController" customModule="Popovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pPS-Aq-9m2"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZXV-e2-LAx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pq2-99-CSY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLS-jj-Avn">
+                                <rect key="frame" x="175" y="43" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.28860000000000002" green="0.78000000000000003" blue="0.40325999999999956" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="A7W-xa-ud5"/>
+                                    <constraint firstAttribute="height" constant="40" id="orC-IS-EUJ"/>
+                                </constraints>
+                                <state key="normal" title="Feeling Great!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJz-4U-rTw">
+                                <rect key="frame" x="175" y="91" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.59982000000000002" green="0.78000000000000003" blue="0.28860000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Peo-Gt-eoa"/>
+                                </constraints>
+                                <state key="normal" title="Pretty good">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7i-9U-4UJ">
+                                <rect key="frame" x="175" y="139" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.78000000000000003" green="0.75543000000000005" blue="0.28860000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ngh-d8-MOe"/>
+                                </constraints>
+                                <state key="normal" title="Can't complain">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAw-mb-9Xa">
+                                <rect key="frame" x="175" y="187" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.78000000000000003" green="0.64077000000000006" blue="0.28860000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Gfn-fo-4x8"/>
+                                </constraints>
+                                <state key="normal" title="Meh, been better">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-pq-J4w">
+                                <rect key="frame" x="175" y="235" width="250" height="40"/>
+                                <color key="backgroundColor" red="0.78000000000000003" green="0.42782999999999999" blue="0.28860000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RSj-vk-a72"/>
+                                </constraints>
+                                <state key="normal" title="Feeling Terrible!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fAw-mb-9Xa" firstAttribute="leading" secondItem="Ukk-pq-J4w" secondAttribute="leading" id="27A-dp-edO"/>
+                            <constraint firstItem="O7i-9U-4UJ" firstAttribute="trailing" secondItem="fAw-mb-9Xa" secondAttribute="trailing" id="8nP-q6-7mx"/>
+                            <constraint firstItem="kJz-4U-rTw" firstAttribute="leading" secondItem="gLS-jj-Avn" secondAttribute="leading" id="BIz-Ce-7rz"/>
+                            <constraint firstItem="kJz-4U-rTw" firstAttribute="top" secondItem="gLS-jj-Avn" secondAttribute="bottom" constant="8" symbolic="YES" id="Fea-jR-uWM"/>
+                            <constraint firstItem="Ukk-pq-J4w" firstAttribute="top" secondItem="fAw-mb-9Xa" secondAttribute="bottom" constant="8" symbolic="YES" id="GyI-kM-VBi"/>
+                            <constraint firstItem="Ukk-pq-J4w" firstAttribute="trailing" secondItem="fAw-mb-9Xa" secondAttribute="trailing" id="K83-w2-xZC"/>
+                            <constraint firstItem="O7i-9U-4UJ" firstAttribute="trailing" secondItem="kJz-4U-rTw" secondAttribute="trailing" id="bnM-Ns-2Wc"/>
+                            <constraint firstItem="O7i-9U-4UJ" firstAttribute="leading" secondItem="kJz-4U-rTw" secondAttribute="leading" id="lmD-wC-XiK"/>
+                            <constraint firstItem="gLS-jj-Avn" firstAttribute="top" secondItem="pPS-Aq-9m2" secondAttribute="bottom" constant="23" id="mfT-iC-mGE"/>
+                            <constraint firstItem="fAw-mb-9Xa" firstAttribute="leading" secondItem="O7i-9U-4UJ" secondAttribute="leading" id="mwd-G3-0It"/>
+                            <constraint firstItem="gLS-jj-Avn" firstAttribute="centerX" secondItem="pq2-99-CSY" secondAttribute="centerX" id="p57-yS-TII"/>
+                            <constraint firstItem="fAw-mb-9Xa" firstAttribute="top" secondItem="O7i-9U-4UJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ts1-QD-xb8"/>
+                            <constraint firstItem="ZXV-e2-LAx" firstAttribute="top" secondItem="Ukk-pq-J4w" secondAttribute="bottom" constant="325" id="ylN-0J-4ie"/>
+                            <constraint firstItem="O7i-9U-4UJ" firstAttribute="top" secondItem="kJz-4U-rTw" secondAttribute="bottom" constant="8" symbolic="YES" id="zSI-Vs-h3R"/>
+                            <constraint firstItem="kJz-4U-rTw" firstAttribute="trailing" secondItem="gLS-jj-Avn" secondAttribute="trailing" id="zno-gZ-gjv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ylN-0J-4ie"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMM-Es-gGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1207" y="374"/>
+        </scene>
+    </scenes>
+</document>
