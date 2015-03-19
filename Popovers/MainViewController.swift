@@ -22,7 +22,7 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
   
   func createPicker()
   {
-    picker.frame = CGRect(x: 45, y: 200, width: 286, height: 291)
+    picker.frame = CGRect(x: ((self.view.frame.width / 2) - 143), y: 200, width: 286, height: 291)
     picker.alpha = 0
     picker.hidden = true
     picker.userInteractionEnabled = true
@@ -52,7 +52,7 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     UIView.animateWithDuration(0.3,
       animations: {
-        self.picker.frame = CGRect(x: 45, y: 230, width: 286, height: 291)
+        self.picker.frame = CGRect(x: ((self.view.frame.width / 2) - 143), y: 230, width: 286, height: 291)
         self.picker.alpha = 1
       })
   }
@@ -61,7 +61,7 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
   {
     UIView.animateWithDuration(0.3,
       animations: {
-        self.picker.frame = CGRect(x: 45, y: 200, width: 286, height: 291)
+        self.picker.frame = CGRect(x: ((self.view.frame.width / 2) - 143), y: 200, width: 286, height: 291)
         self.picker.alpha = 0
       },
       completion: { finished in
