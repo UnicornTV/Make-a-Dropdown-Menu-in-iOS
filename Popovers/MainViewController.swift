@@ -29,7 +29,7 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     var offset = 21
     
-    for (index, feeling) in properties.moods.enumerate()//enumerate(properties.moods)
+    for (index, feeling) in properties.moods.enumerate()
     {
       let button = UIButton()
       button.frame = CGRect(x: 13, y: offset, width: 260, height: 43)
