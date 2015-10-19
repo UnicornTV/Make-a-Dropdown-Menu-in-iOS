@@ -162,6 +162,7 @@
 		6F162C0E1A99D83800919EE7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Unicorn;
 				TargetAttributes = {
@@ -415,6 +416,7 @@
 				6F162C371A99D83900919EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F162C381A99D83900919EE7 /* Build configuration list for PBXNativeTarget "PopoversTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +425,7 @@
 				6F162C3A1A99D83900919EE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

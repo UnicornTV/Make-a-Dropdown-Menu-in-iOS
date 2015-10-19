@@ -29,7 +29,7 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     var offset = 21
     
-    for (index, feeling) in enumerate(properties.moods)
+    for (index, feeling) in properties.moods.enumerate()//enumerate(properties.moods)
     {
       let button = UIButton()
       button.frame = CGRect(x: 13, y: offset, width: 260, height: 43)
@@ -79,12 +79,10 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
   {
-    if let popupView = segue.destinationViewController as? UIViewController
+    let popupView = segue.destinationViewController
+    if let popup = popupView.popoverPresentationController
     {
-      if let popup = popupView.popoverPresentationController
-      {
         popup.delegate = self
-      }
     }
   }
   
