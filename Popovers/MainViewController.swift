@@ -15,26 +15,26 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
     ]
   }
   
-  @IBAction func pickerSelect(sender: UIButton)
+  @IBAction func pickerSelect(_ sender: UIButton)
   {
-    picker.hidden ? openPicker() : closePicker()
+    picker.isHidden ? openPicker() : closePicker()
   }
   
   func createPicker()
   {
     picker.frame = CGRect(x: ((self.view.frame.width / 2) - 143), y: 200, width: 286, height: 291)
     picker.alpha = 0
-    picker.hidden = true
-    picker.userInteractionEnabled = true
+    picker.isHidden = true
+    picker.isUserInteractionEnabled = true
     
     var offset = 21
     
-    for (index, feeling) in properties.moods.enumerate()
+    for (index, feeling) in properties.moods.enumerated()
     {
       let button = UIButton()
       button.frame = CGRect(x: 13, y: offset, width: 260, height: 43)
-      button.setTitleColor(UIColor(rgba: feeling["color"]!), forState: .Normal)
-      button.setTitle(feeling["title"], forState: .Normal)
+      button.setTitleColor(UIColor(rgba: feeling["color"]!), for: UIControlState())
+      button.setTitle(feeling["title"], for: UIControlState())
       button.tag = index
       
       picker.addSubview(button)
@@ -48,9 +48,9 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
   
   func openPicker()
   {
-    self.picker.hidden = false
+    self.picker.isHidden = false
     
-    UIView.animateWithDuration(0.3,
+    UIView.animate(withDuration: 0.3,
       animations: {
         self.picker.frame = CGRect(x: ((self.view.frame.width / 2) - 143), y: 230, width: 286, height: 291)
         self.picker.alpha = 1
@@ -59,13 +59,13 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
   
   func closePicker()
   {
-    UIView.animateWithDuration(0.3,
+    UIView.animate(withDuration: 0.3,
       animations: {
         self.picker.frame = CGRect(x: ((self.view.frame.width / 2) - 143), y: 200, width: 286, height: 291)
         self.picker.alpha = 0
       },
       completion: { finished in
-        self.picker.hidden = true
+        self.picker.isHidden = true
       }
     )
   }
@@ -77,18 +77,18 @@ class MainViewController: UIViewController, UIPopoverPresentationControllerDeleg
     createPicker()
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
-    let popupView = segue.destinationViewController
+    let popupView = segue.destination
     if let popup = popupView.popoverPresentationController
     {
         popup.delegate = self
     }
   }
   
-  func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle
   {
-    return UIModalPresentationStyle.None
+    return UIModalPresentationStyle.none
   }
 
 }
